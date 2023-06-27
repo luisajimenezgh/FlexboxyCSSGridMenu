@@ -1,0 +1,141 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 40px 0;
+	/*FLEXBOX */
+		/* display: flex;
+		gap: 20px; */
+	
+	/*CSS GRID*/
+	display: grid;
+	grid-template-columns: 3fr 1fr; /*carac. de cada columna, la 1er columna es 3 veces más ancha que la 2da columna*/
+	gap: 20px;
+
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-pizzas {
+	/*FLEXBOX*/
+		/* width: 70%; /* % establece el ancho del contenedor al 70% del ancho del elemento que lo contiene.
+		display: flex;
+		flex-wrap: wrap; */ /*útil cuando se usa Flexbox para construir un diseño responsive, en el que la cantidad de espacio disponible puede variar*/
+		/* gap: 20px; */
+
+	/*CSS GRID*/
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	
+}
+
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	/*FLEXBOX*/
+		/* width: 33.33%;
+		width: calc(33.33% - 20px); AGREGADO FLEXBOX*/
+
+}
+
+.card .textos {
+	height: 100%;
+	/*FLEXBOX*/
+		/* display: flex;
+		flex-direction: column;
+		justify-content: space-between; */
+
+	/*CSS GRID*/
+		display: grid;
+		grid-template-rows: 1fr auto; /* 1fr toma todo el espacio y auto lo que necesita */
+}
+
+.banner {
+	border-radius: 10px; /* redondear esquinas*/
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+	/*FLEXBOX*/
+		/*width: 30%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between; */
+
+	/*CSS GRID*/
+		display: grid;
+		grid-template-rows: auto auto auto;
+		align-items: center;
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 900px) {
+	.contenedor{
+		grid-template-columns: 1fr;
+	}
+} 
+/*cuando el ancho de la pantalla sea menor o igual a 900px toma estas caracteristicas y se vera verticalmente*/
+
+@media screen and (max-width: 700px) {
+	.card{
+		min-height: 150px;
+		padding: 15px;
+	}	
+}
+/*cuando el ancho de la pantalla sea menor o igual a 700px toma estas caracteristicas*/
+
+
+@media screen and (max-width: 600px) {
+	.banner{
+		grid-template-rows: auto auto;
+	}
+}
+/*cuando el ancho de la pantalla sea menor o igual a 600px toma estas caracteristicas, aquí el banner se mueve a 2 columnas en lugar de 3*/
+
